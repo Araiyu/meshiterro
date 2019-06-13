@@ -1,3 +1,11 @@
+<div class="profile-container">
+    <h3 class="profile-name"><%= @user.name %></h3>
+    <%= attachment_image_tag @user, :profile_image,　format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+  <% if @user.id == current_user.id %>
+        <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p>
+    <% end %>
+</div>
+
 <section class="sct-color-1 slice">
   <div class="container-fluid masonry-container">
     <div class="row">
@@ -9,7 +17,7 @@
               <div class="block block-image v1">
                 <div class="block-image">
                   <div class="view view-first">
-                    <%= attachment_image_tag post_image, :image %>
+                   <!--  <%= attachment_image_tag post_image, :image %> -->
                   </div>
                 </div>
                 <div class="block-content">
